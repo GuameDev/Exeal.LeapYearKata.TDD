@@ -9,7 +9,7 @@ namespace Exeal.LeapYearKata.TDD.Tests
         public void IsLeapIfIsDivisibleBy400(int value)
         {
             //Arrange
-            var year = new Year() { Value = value };
+            var year = new Year(value);
 
             //Act & Assert
             Assert.True(year.IsLeap());
@@ -22,7 +22,7 @@ namespace Exeal.LeapYearKata.TDD.Tests
         public void IsNotLeapIfIsDivisibleBy100ButNoBy400(int value)
         {
             //Arrange
-            var year = new Year() { Value = value };
+            var year = new Year(value);
 
             //Act & Assert
             Assert.False(year.IsLeap());
@@ -35,7 +35,7 @@ namespace Exeal.LeapYearKata.TDD.Tests
         public void IsLeapIfIsDivisibleBy4ButNotBy100(int value)
         {
             //Arrange
-            var year = new Year() { Value = value };
+            var year = new Year(value);
 
             //Act & Assert
             Assert.True(year.IsLeap());
@@ -48,7 +48,7 @@ namespace Exeal.LeapYearKata.TDD.Tests
         public void IsNotLeapIfIsNotDivisibleBy4(int value)
         {
             //Arrange
-            var year = new Year() { Value = value };
+            var year = new Year(value);
 
             //Act & Assert
             Assert.False(year.IsLeap());
