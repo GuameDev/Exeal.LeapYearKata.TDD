@@ -5,15 +5,21 @@ namespace Exeal.LeapYearKata.TDD.Tests
         [Fact]
         public void IsLeapIfIsDivisibleBy400()
         {
-            var year = new Year() { Value = 2024 };
+            //Arrange
+            var year = new Year() { Value = 2000 };
+
+            //Act & Assert
             Assert.True(year.IsLeap());
         }
 
         [Fact]
         public void IsNotLeapIfIsDivisibleBy100ButNoBy400()
         {
+            //Arrange
             var year = new Year() { Value = 1900 };
-            Assert.True(year.IsLeap());
+
+            //Act & Assert
+            Assert.False(year.IsLeap());
         }
     }
 }
