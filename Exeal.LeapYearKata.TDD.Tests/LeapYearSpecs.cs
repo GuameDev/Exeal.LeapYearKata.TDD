@@ -21,5 +21,15 @@ namespace Exeal.LeapYearKata.TDD.Tests
             //Act & Assert
             Assert.False(year.IsLeap());
         }
+
+        [Fact]
+        public void IsLeapIfIsDivisibleBy4ButNotBy100()
+        {
+            //Arrange
+            var year = new Year() { Value = 1996 };
+
+            //Act & Assert
+            Assert.True(year.IsLeap());
+        }
     }
 }
