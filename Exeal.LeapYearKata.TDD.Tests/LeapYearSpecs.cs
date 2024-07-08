@@ -2,41 +2,53 @@ namespace Exeal.LeapYearKata.TDD.Tests
 {
     public class LeapYearSpecs
     {
-        [Fact]
-        public void IsLeapIfIsDivisibleBy400()
+        [Theory]
+        [InlineData(1200)]
+        [InlineData(1600)]
+        [InlineData(2000)]
+        public void IsLeapIfIsDivisibleBy400(int value)
         {
             //Arrange
-            var year = new Year() { Value = 2000 };
+            var year = new Year() { Value = value };
 
             //Act & Assert
             Assert.True(year.IsLeap());
         }
 
-        [Fact]
-        public void IsNotLeapIfIsDivisibleBy100ButNoBy400()
+        [Theory]
+        [InlineData(1700)]
+        [InlineData(1800)]
+        [InlineData(1900)]
+        public void IsNotLeapIfIsDivisibleBy100ButNoBy400(int value)
         {
             //Arrange
-            var year = new Year() { Value = 1900 };
+            var year = new Year() { Value = value };
 
             //Act & Assert
             Assert.False(year.IsLeap());
         }
 
-        [Fact]
-        public void IsLeapIfIsDivisibleBy4ButNotBy100()
+        [Theory]
+        [InlineData(1996)]
+        [InlineData(1992)]
+        [InlineData(1988)]
+        public void IsLeapIfIsDivisibleBy4ButNotBy100(int value)
         {
             //Arrange
-            var year = new Year() { Value = 1996 };
+            var year = new Year() { Value = value };
 
             //Act & Assert
             Assert.True(year.IsLeap());
         }
 
-        [Fact]
-        public void IsNotLeapIfIsNotDivisibleBy4()
+        [Theory]
+        [InlineData(1501)]
+        [InlineData(1789)]
+        [InlineData(1903)]
+        public void IsNotLeapIfIsNotDivisibleBy4(int value)
         {
             //Arrange
-            var year = new Year() { Value = 1903 };
+            var year = new Year() { Value = value };
 
             //Act & Assert
             Assert.False(year.IsLeap());
