@@ -7,7 +7,7 @@ namespace Exeal.LeapYearKata.TDD
 
         public bool IsLeap()
         {
-            return this.Value % 400 == 0;
+            return (this.Value % 4 == 0 && this.Value % 100 != 0) || (this.Value % 400 == 0);
         }
     }
 }
