@@ -7,7 +7,7 @@ namespace Exeal.LeapYearKata.TDD
 
         public bool IsLeap()
         {
-            throw new NotImplementedException();
+            return Value == 2024;
         }
     }
 }
